@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Camilli Loise 💖</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #ffd6e7, #ffb3d9);
+    color: #330033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.5em;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  .hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: float 5s linear infinite;
+  }
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  .heart::before { top: -10px; left: 0; }
+  .heart::after { top: 0; left: 10px; }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(-45deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(-45deg); opacity: 0; }
+  }
+  iframe {
+    display: none; /* Oculta o player do YouTube */
+  }
+</style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <div>
+    <h1>Para Camilli Loise 💖</h1>
+    <p>
+      Hoje faz 4 meses desde que o meu coração encontrou o seu, e desde então, tudo tem sido mais bonito.<br>
+      Cada riso seu é um pedacinho de paz que eu guardo comigo, e cada abraço seu é o meu lar.<br>
+      Camilli, você é a razão de eu querer ser melhor a cada dia — porque amar você é o que dá sentido a tudo.<br>
+      Quero viver muitos outros meses, anos e vidas ao seu lado, porque o amor que eu sinto por você é infinito, leve e verdadeiro.<br>
+      Te amo hoje, amanhã e em todos os dias que ainda virão.<br>
+      <strong>Com amor, Pablo</strong>
+    </p>
+  </div>
+
+  <!-- Música de fundo -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/PJbMenvUX3k?autoplay=1&loop=1&playlist=PJbMenvUX3k" frameborder="0" allow="autoplay"></iframe>
+
+  <script>
+    // Cria corações aleatórios
+    for(let i = 0; i < 30; i++){
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 3 + Math.random() * 5 + 's';
+      heart.style.width = 10 + Math.random() * 20 + 'px';
+      heart.style.height = heart.style.width;
+      document.querySelector('.hearts').appendChild(heart);
+    }
+  </script>
+</body>
+</html>
